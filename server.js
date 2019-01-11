@@ -37,8 +37,9 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines
 
 
 //MONGOOOOOOOOOOOOOOOOOOOOSEEEEEEE
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+//mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
+mongoose.connect(MONGODB_URI);
 
 // Routes
 
