@@ -113,7 +113,7 @@ app.get("/articles/:id", function(req, res) {
     // ..and populate all of the notes associated with it
     
    .populate("note")   
-   /////////////////
+   ///////////////
     //does this link to the note ref and then populate the db view with everything in Note or just id?
     //why is the note type     type: Schema.Types.ObjectId,  ObjectID  when it is referenced by Name Note
     //does the note object have to be in an array in the article schema?
