@@ -1,4 +1,4 @@
-# scrapegoose
+# ScrapeGoose
 
 This app uses:
 
@@ -19,6 +19,7 @@ Scrape first and then click on each article to leave a note.  You can also delet
 
 The note displays in the input box.  This app is a combination of Mongoose Activity 11 and Mongoose Activity 20.
 
-I made this app in both a JQUERY version and Handlebars version.  
+### Programming Notes:  
+A foreign key is made for the Link between Articles and Notes in the Mongo Database via Mongoose.  Also I made this app in both a JQUERY version and Handlebars version.  
 
 The handlebars version is posted to heroku.
