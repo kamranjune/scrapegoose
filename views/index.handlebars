@@ -1,0 +1,25 @@
+    <div id="wrapper">
+      <a href="/"><h1>Mongoose Scraper</h1></a>
+      <img src = "./assets/images/mongoose.jpg">
+      <img src = "./assets/images/scraper.jpg">
+
+      <h2><i>San Diego Union Tribune - Transportation Section  </i></h2>
+      <h3>Select an Article to Make a Note</h3>
+      <div id="articles">
+          {{#each Post}}
+        
+          <p class="articles" data-id="{{this._id}}"> 
+            <b>Title:</b> {{this.title}} <br /> 
+            Link:  <a href="{{this.link}}" target="_blank">  {{this.link}}</a><br /> 
+            Summary:  {{this.summary}} 
+          </p>
+
+          {{/each}}
+      </div>
+      <div id="right-wrapper">
+          <a href="/scrape"><img src = "./assets/images/scraper.jpg">SCRAPE ARTICLES</a>
+      <div id="notes"></div>
+      <div id="results"></div>
+      </div>
+    </div>
+   

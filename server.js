@@ -27,6 +27,14 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+
 // Connect to the Mongo DB
 //mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
 
@@ -89,17 +97,24 @@ app.get("/scrape", function(req, res) {
     });
 
     // Send a message to the client
-    res.send("Scrape Complete");
+    res.send("Scrape Complete, Link to <a href='/'>Mongoose Scraper</a>");
   });
 });
 
 // Route for getting all Articles from the db
-app.get("/articles", function(req, res) {
+// app.get("/articles", function(req, res) {
+  app.get("/", function(req, res) {
+  
   // Grab every document in the Articles collection
   db.Article.find({})
     .then(function(dbArticle) {
       // If we were able to successfully find Articles, send them back to the client
-      res.json(dbArticle);
+      var hbsObject = {
+        Post: dbArticle
+      };
+      console.log(hbsObject);   
+      //this is the key to rendering handlebars, read: index, with handlebars
+      res.render("index", hbsObject);
     })
     .catch(function(err) {
       // If an error occurred, send it to the client

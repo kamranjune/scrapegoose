@@ -1,12 +1,12 @@
 // is getJson automatically for localhost:3000 index
 // Grab the articles as a json
-$.getJSON("/articles", function(data) {
-  // For each one
-  for (var i = 0; i < data.length; i++) {
-    // Display the information on the page
-    $("#articles").append("<p class='articles' data-id='" + data[i]._id + "'>" + "<b>Title:  </b>" + data[i].title + "<br />" + "Link:  <a href='" + data[i].link + "' target='_blank'>" +data[i].link + "</a><br />" + "Summary:  " + data[i].summary + "</p>");
-  }
-});
+// $.getJSON("/articles", function(data) {
+//   // For each one
+//   for (var i = 0; i < data.length; i++) {
+//     // Display the information on the page
+//     $("#articles").append("<p class='articles' data-id='" + data[i]._id + "'>" + "<b>Title:  </b>" + data[i].title + "<br />" + "Link:  <a href='" + data[i].link + "' target='_blank'>" +data[i].link + "</a><br />" + "Summary:  " + data[i].summary + "</p>");
+//   }
+// });
 
 
 
